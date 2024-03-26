@@ -1,0 +1,234 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    background-color: #f8f8f8;
+    color: #333;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 20px 0;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    font-family: 'Truculenta', sans-serif;
+    font-size: 32px;
+    color: #333;
+    margin: 0;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #ff4b2b;
+}
+
+#banner {
+    background-image: url('banner.jpg');
+    background-size: cover;
+    background-position: center;
+    color: #000000;
+    padding: 125px 0;
+    text-align: center;
+    animation: fadeInBanner 0.9s ease-in-out;
+}
+#banner h2 {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+#titleInventory {
+    font-size: 30px;
+    text-align: center;
+}
+
+.btn {
+    display: inline-block;
+    background-color: #ff4b2b;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+.btn:hover {
+    transform: scale(1.1);
+    background-color: #ff4b2b9c;
+}
+
+#btn2-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+#btn2-container .btn {
+    display: inline-block;
+}
+
+#filter {
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+}
+
+#filtro {
+    margin-left: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    background-color: #fff;
+    cursor: pointer;
+    transition: border-color 0.3s ease;
+}
+
+#filtro:hover {
+    border-color: #999;
+}
+
+#filtro option {
+    background-color: #fff;
+    color: #333;
+}
+
+#titleInventory {
+    margin-right: auto;
+}
+
+#inventory {
+    padding: 100px 0;
+}
+
+.inventory-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+@keyframes fadeIn {
+    from {
+        transform: translateY(-10px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.itemWithoutAnimate {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.item {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    opacity: 0;
+    transform: translateX(20px);
+    transition: opacity 2s ease, transform 2s ease;
+}
+
+.item.animate {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.item img {
+    width: 100%;
+    max-width: 200px;
+    margin-bottom: 20px;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+footer p {
+    margin: 0;
+}
+
+
+@media only screen and (max-width: 600px) {
+    #filter {
+        font-size: 14px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .container {
+        width: 90%;
+    }
+    header {
+        padding: 10px 0;
+    }
+    header h1 {
+        font-size: 24px;
+    }
+    nav ul {
+        margin-top: 10px;
+    }
+    nav ul li {
+        margin-left: 10px;
+        margin-bottom: 10px;
+    }
+    #banner h2 {
+        font-size: 36px;
+    }
+    .btn {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+    .inventory-grid {
+        gap: 10px;
+    }
+    .item img {
+        max-width: 150px;
+        margin-bottom: 10px;
+    }
+}
+@media only screen and (min-width: 900px) {
+    nav ul {
+        margin-right: 20px;
+    }
+}

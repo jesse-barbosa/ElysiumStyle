@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elysium Style - Loja de Roupas</title>
+    <link rel="stylesheet" href="../css/cssEstoque/style.css" />
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <h1>Elysium Style</h1>
+                <nav>
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="estoque.html">Estoque</a>
+                        <li><a href="sobre.html">Sobre</a></li>
+                        <li><a href="contato.html">Contato</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+    
+    <section id="inventory">
+        <div class="container">
+            <div class="inventory-header">
+                <h2 id="titleInventory">Nosso Estoque</h2>
+                <div id="filter">
+                    <h2>Filtrar por:</h2>
+                    <select id="filtro">
+                        <option value="todos">Todos</option>
+                        <option value="homem">Homem</option>
+                        <option value="mulher">Mulher</option>
+                        <option value="unissex">Unissex</option>
+                    </select>
+                </div>
+            </div>
+            <script>
+                function animateVisibleItems() {
+                    const items = document.querySelectorAll('.item');
+            
+                    items.forEach(item => {
+                        const rect = item.getBoundingClientRect();
+                        const windowHeight = window.innerHeight || document.documentElement.clientHeight;
+            
+                        if (rect.top >= 0 && rect.top <= windowHeight) {
+                            item.classList.add('animate');
+                        }
+                    });
+                }
+            
+                document.addEventListener('DOMContentLoaded', function() {
+                    animateVisibleItems();
+                });
+            
+                window.addEventListener('scroll', animateVisibleItems);
+            </script>
+            
+            <div class="inventory-grid">
+                <div class="item homem unissex">
+                    <img src="../Img/item1.jpeg" alt="Item 1">
+                    <h3>Camiseta Branca</h3>
+                    <p>R$ 39,99</p>
+                </div>
+                <div class="item homem unissex">
+                    <img src="../img/item2.jpeg" height="290px" alt="Item 2">
+                    <h3>Calça Jeans</h3>
+                    <p>R$ 89,99</p>
+                </div>
+                <div class="item mulher">
+                    <img src="../img/item3.jpeg" height="290px" alt="Item 3">
+                    <h3>Vestido Floral</h3>
+                    <p>R$ 129,99</p>
+                </div> 
+                <div class="item homem">
+                    <img src="../img/estoque/blazerLinho.jpeg" height="280px" alt="Item 4">
+                    <h3>Blazer de linho</h3>
+                    <p>R$ 79,99</p>
+                </div> 
+                <div class="item mulher">
+                    <img src="../img/estoque/VestidoMidiEstampado.jpeg" height="280px" alt="Item 5">
+                    <h3>Vestido Midi Estampado</h3>
+                    <p>R$ 99,99</p>
+                </div>
+                <div class="item homem">
+                    <img src="../img/estoque/CamisaPoloVerde.jpeg" height="280px" alt="Item 6">
+                    <h3>Camisa polo verde</h3>
+                    <p>R$ 49,99</p>
+                </div>
+                <div class="item mulher">
+                    <img src="../img/estoque/SaiaLapisPreta.jpeg" height="280px" alt="Item 7">
+                    <h3>Saia Lápis Preta</h3>
+                    <p>R$ 69,99</p>
+                </div> 
+                <div class="item homem unissex">
+                    <img src="../img/estoque/JaquetaBomber.jpeg" height="280px" alt="Item 8">
+                    <h3>Jaqueta Bomber Verde</h3>
+                    <p>R$ 89,99</p>
+                </div>
+                <div class="item mulher">
+                    <img src="../img/estoque/sueterDeTrico.jpeg" height="280px" alt="Item 9">
+                    <h3>Suéter de Tricô</h3>
+                    <p>R$ 59,99</p>
+                </div> 
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Jessé Barbosa. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        
+        function filtrarItens() {
+            const filtro = document.getElementById('filtro').value;
+
+            const itens = document.querySelectorAll('.item');
+
+            itens.forEach(item => {
+                if (filtro === 'todos' || item.classList.contains(filtro)) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        }
+
+        
+        document.getElementById('filtro').addEventListener('change', filtrarItens);
+
+
+        filtrarItens();
+
+    </script>
+</body>
+</html>
