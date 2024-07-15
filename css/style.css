@@ -136,8 +136,8 @@ nav ul li a:hover {
 }
 
 footer {
-    background-color: #ffffff8f;
-    color: #000000;
+    background-color: #494949;
+    color: #fff;
     padding: 20px 0;
     text-align: center;
 }
@@ -145,8 +145,6 @@ footer {
 footer p {
     margin: 0;
 }
-
-
 
 #filter {
     font-size: 14px;
